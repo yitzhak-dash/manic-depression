@@ -5,8 +5,6 @@ import threading
 import keyring
 
 # Get these credentials from http://twilio.com/user/account
-# account_sid = "ACe98b950eb8fb9b6e2fad9543e81238db"
-# auth_token = "2b443c98ec06daa566b09ce0bbf49841"
 account_sid = keyring.get_password("twilly", "account_sid")
 auth_token = keyring.get_password("twilly", "auth_token")
 
