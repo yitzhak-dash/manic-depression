@@ -10,10 +10,29 @@ auth_token = keyring.get_password("twilly", "auth_token")
 
 client = Client(account_sid, auth_token)
 
-to_numbers = ["+972547804658",
-              # "+972733949364",
+# from_num="+97237207764"
+from_num = '+972733948111'
+
+to_numbers = ["+972733948313",
+              "+972733949364",
               "+972733949357",
-              "+972733948243"
+              "+972733948243",
+              "+972733949359",
+              "+972733949364",
+              "+972733948428",
+              "+972733949370",
+              "+972733948378",
+              "+972733948378",
+              "+972733949354",
+              "+972733949329",
+              "+972733948031",
+              "+972733948173",
+              "+972733948150",
+              "+972733948117",
+              "+972733948382",
+              "+972733948193",
+              "+972733948176",
+              "+972733948168",
               ]
 
 
@@ -21,7 +40,7 @@ to_numbers = ["+972547804658",
 def make_call(to):
     call = client.api.account.calls \
         .create(to=to,  # Any phone number
-                from_="+972733948111",  # Must be a valid Twilio number
+                from_=from_num,  # Must be a valid Twilio number
                 url="http://demo.twilio.com/hellomonkey/monkey.mp3")
     return call
 
