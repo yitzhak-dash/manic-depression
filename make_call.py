@@ -4,7 +4,6 @@ import sys
 import threading
 import keyring
 
-# Get these credentials from http://twilio.com/user/account
 account_sid = keyring.get_password("twilly", "account_sid")
 auth_token = keyring.get_password("twilly", "auth_token")
 
@@ -39,8 +38,8 @@ to_numbers = ["+972733948313",
 # Make the call
 def make_call(to):
     call = client.api.account.calls \
-        .create(to=to,  # Any phone number
-                from_=from_num,  # Must be a valid Twilio number
+        .create(to=to,
+                from_=from_num,
                 url="http://demo.twilio.com/hellomonkey/monkey.mp3")
     return call
 
