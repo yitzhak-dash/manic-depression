@@ -9,30 +9,14 @@ auth_token = keyring.get_password("twilly", "auth_token")
 
 client = Client(account_sid, auth_token)
 
-# from_num="+97237207764"
-from_num = '+972733948111'
+from_num = '+972733948243'
 
-to_numbers = ["+972733948313",
-              "+972733949364",
-              "+972733949357",
-              "+972733948243",
-              "+972733949359",
-              "+972733949364",
-              "+972733948428",
-              "+972733949370",
-              "+972733948378",
-              "+972733948378",
-              "+972733949354",
-              "+972733949329",
-              "+972733948031",
-              "+972733948173",
-              "+972733948150",
-              "+972733948117",
-              "+972733948382",
-              "+972733948193",
-              "+972733948176",
-              "+972733948168",
-              ]
+
+def get_phone_nums():
+    with open('list.txt', 'r') as myfile:
+        data = myfile.read()
+    phones = list(set(data.split('\n')))
+    return phones
 
 
 # Make the call
@@ -55,6 +39,8 @@ def call_wait_end(to_num, sec):
 
 if __name__ == '__main__':
     sleep_sec = None
+    to_numbers = get_phone_nums()
+    print(to_numbers)
     if len(sys.argv) > 1:
         sleep_sec = int(sys.argv[1])
     for to_num in to_numbers:
