@@ -9,7 +9,7 @@ auth_token = keyring.get_password("twilly", "auth_token")
 
 client = Client(account_sid, auth_token)
 
-from_num = '+972733948243'
+from_num = '+xxxxxxxxxx'
 
 
 def get_phone_nums():
